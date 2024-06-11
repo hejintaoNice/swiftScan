@@ -148,7 +148,7 @@ open class LBXScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
     }
     
     func start() {
-        DispatchQueue.global(qos: .background).async { [weak self] in
+        DispatchQueue.global(qos: .background).async {
             if !self.session.isRunning {
                 self.isNeedScanResult = true
                 self.session.startRunning()
@@ -157,7 +157,7 @@ open class LBXScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
     }
     
     func stop() {
-        DispatchQueue.global(qos: .background).async { [weak self] in
+        DispatchQueue.global(qos: .background).async {
             if self.session.isRunning {
                 self.isNeedScanResult = false
                 self.session.stopRunning()
